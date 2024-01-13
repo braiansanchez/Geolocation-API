@@ -1,7 +1,4 @@
-﻿using GeolocationApp.Data.Entities;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-
-namespace GeolocationApp.Services
+﻿namespace GeolocationApp.Services
 {
     public interface IGeolocationService<T> where T : class
     {

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GeolocationApp.Migrations
 {
     [DbContext(typeof(GeolocationDBContext))]
-    [Migration("20240112180029_FirstMigration4")]
-    partial class FirstMigration4
+    [Migration("20240113193227_firstMigration")]
+    partial class firstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,12 +48,11 @@ namespace GeolocationApp.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
+                    b.Property<string>("User")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Locations");
                 });
@@ -69,26 +68,17 @@ namespace GeolocationApp.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("Password")
-                        .HasColumnType("integer");
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<int>("UserName")
-                        .HasColumnType("integer");
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("GeolocationApp.Data.Entities.LocationDB", b =>
-                {
-                    b.HasOne("GeolocationApp.Data.Entities.UserDB", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

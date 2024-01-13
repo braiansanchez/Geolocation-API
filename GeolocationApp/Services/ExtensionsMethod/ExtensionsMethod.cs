@@ -19,7 +19,7 @@ namespace GeolocationApp.Services.ExtensionsMethod
                 Name = locationDB.Name,
                 Description = locationDB.Description,
                 Coordinates = locationDB.Coordinates,
-                User = locationDB.User.ToModel(),
+                User = locationDB.User,
                 Date = locationDB.Date,
             };
         }

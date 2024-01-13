@@ -1,6 +1,5 @@
 ﻿using GeolocationApp.Data;
 using GeolocationApp.Data.Entities;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace GeolocationApp.Services
 {

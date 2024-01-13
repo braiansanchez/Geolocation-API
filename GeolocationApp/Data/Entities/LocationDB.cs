@@ -6,23 +6,24 @@
         public string Name { get; set; }
         public string Description { get; set; }
         public string Coordinates { get; set; }
-        public UserDB User { get; set; }
+        public string User { get; set; }
         public DateTime Date { get; set; }
 
-        public LocationDB(string name, string description, string coordinates)
+        public LocationDB(string name, string description, string coordinates, string user)
         {
             Name = name;
             Description = description;
             Coordinates = coordinates;
-            User = new UserDB();
+            User = user;
             Date = DateTime.UtcNow;
         }
 
-        public void UpdateValues(string name, string description, string coordinates)
+        public void UpdateValues(string name, string description, string coordinates, string user)
         {
             Name = name;
             Description = description;
             Coordinates = coordinates;
+            User = user;
             Date = DateTime.UtcNow;
         }
     }

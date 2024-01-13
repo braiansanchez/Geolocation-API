@@ -2,7 +2,7 @@
 
 namespace GeolocationApp.Data.Entities
 {
-    public class UserDB
+    public class UserDB 
     {
         public int Id { get; set; }
         public string UserName { get; set; }
